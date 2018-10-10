@@ -21,6 +21,6 @@ build: false
 
 test_script:
   - cargo build
-  
-build_success:
+
+on_success:
   - rmdir /s /q C:\Users\appveyor\.cargo\registry
