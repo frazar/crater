@@ -8,8 +8,7 @@ matrix:
     - CHANNEL: nightly
 
 cache:
-  - C:\Users\appveyor\.cargo\registry
-  - target
+  - C:\Users\appveyor\.cargo
 
 install:
   - appveyor-retry appveyor DownloadFile https://win.rustup.rs/ -FileName rustup-init.exe
@@ -22,3 +21,6 @@ build: false
 
 test_script:
   - cargo build
+  
+build_success:
+  - rmdir /s /q C:\Users\appveyor\.cargo\registry
